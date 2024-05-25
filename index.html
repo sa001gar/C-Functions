@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to Functions in C</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/github.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        .section-header {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+        .section-content {
+            background-color: #ffffff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .code-snippet {
+            background-color: #f8f9fa;
+            padding: 10px;
+            border-radius: 5px;
+            position: relative;
+        }
+        .copy-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .copy-btn:hover {
+            background-color: #0056b3;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #777;
+        }
+        @media (max-width: 768px) {
+            body {
+                margin: 10px;
+            }
+            .section-header, .section-content {
+                margin-bottom: 10px;
+            }
+            .copy-btn {
+                padding: 3px 7px;
+            }
+
+          
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1 class="text-center mb-4">Introduction to Functions in C Programming</h1>
+    
+    <div class="section-content">
+        <h2 class="section-header">What are Functions?</h2>
+        <p>In C programming, a function is a block of code that performs a specific task. Functions help in modularizing the code, making it easier to read, maintain, and reuse.</p>
+    </div>
+    
+    <div class="section-content">
+        <h2 class="section-header">Real-Life Example: Making a Cup of Coffee</h2>
+        <p>Consider the task of making a cup of coffee. This task can be broken down into smaller steps:</p>
+        <ol>
+            <li>Boil water</li>
+            <li>Add coffee powder to a cup</li>
+            <li>Pour hot water into the cup</li>
+            <li>Add sugar and milk</li>
+            <li>Stir the coffee</li>
+        </ol>
+        <p>In programming terms, each of these steps can be represented as a function. For example:</p>
+        <div class="code-snippet">
+            <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+            <pre><code class="c">void boilWater() {
+    // Code to boil water
+}
+
+void addCoffeePowder() {
+    // Code to add coffee powder to a cup
+}
+
+void pourHotWater() {
+    // Code to pour hot water into the cup
+}
+
+void addSugarAndMilk() {
+    // Code to add sugar and milk
+}
+
+void stirCoffee() {
+    // Code to stir the coffee
+}
+
+int main() {
+    boilWater();
+    addCoffeePowder();
+    pourHotWater();
+    addSugarAndMilk();
+    stirCoffee();
+    return 0;
+}</code></pre>
+        </div>
+    </div>
+    
+    <div class="section-content">
+        <h2 class="section-header">Anatomy of a Function</h2>
+        <img src="anatomy.png" alt="Anatomy of a Function" class="img-fluid mb-4">
+        <p>Let's break down the parts of a function in C:</p>
+        <ul>
+            <li><strong>Return Type:</strong> Specifies the type of value the function returns. If no value is returned, use <code>void</code>.</li>
+            <li><strong>Function Name:</strong> The name of the function, used to call it.</li>
+            <li><strong>Parameters:</strong> Variables passed to the function. Enclosed in parentheses.</li>
+            <li><strong>Body:</strong> The block of code that defines what the function does. Enclosed in curly braces.</li>
+        </ul>
+    </div>
+    
+    <div class="section-content">
+        <h2 class="section-header">Example: Calculating the Sum of Two Numbers</h2>
+        <div class="code-snippet">
+            <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+            <pre><code class="c">#include &lt;stdio.h&gt;
+
+int sum(int a, int b) {
+    return a + b;
+}
+
+int main() {
+    int result = sum(5, 3);
+    printf("The sum is: %d\\n", result);
+    return 0;
+}</code></pre>
+        </div>
+        <p>In this example, we have a function <code>sum</code> that takes two integers as parameters and returns their sum. The <code>main</code> function calls <code>sum</code> and prints the result.</p>
+    </div>
+    
+    <div class="section-content">
+        <h2 class="section-header">Diagram: How Functions Work</h2>
+        <img src="Working-of-Function-in-C-1-768.png" alt="How Functions Work" class="img-fluid">
+    </div>
+    
+    <div class="footer">
+        <footer class="bg-gray-200 py-6">
+            <p class="text-gray-600 text-center">Copyright 2024 | Sagar Kundu</p>
+          </footer>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+
+    function copyCode(button) {
+        const code = button.nextElementSibling.textContent;
+        navigator.clipboard.writeText(code).then(() => {
+            button.textContent = "Copied!";
+            setTimeout(() => {
+                button.textContent = "Copy Code";
+            }, 2000);
+        });
+    }
+</script>
+</body>
+</html>
